@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+
+// Clearfix
+@mixin clearFix {
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+
+// Text Replace
+@mixin textHide {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	
+	a {
+	  display: block;
+	  height: 100%;
+		width: 100%;
+	}
+}
+
+
+// Mouseover Animation
+@mixin hoverEffect($speed:300ms, $opacity:0.7) {
+	@include transition-duration($speed);
+	@include transition-property(opacity);
+	
+	&:hover {
+		@include opacity($opacity);
+	}
+}
+
+
+// Gradation
+@mixin gradient($direction:'top', $lighten:'lighten', $color:$color-link, $percent:10%) {
+  background-color: $color;
+  
+  @if $direction == top {
+    @if $lighten == lighten {
+      @include background-image(linear-gradient(lighten($color, $percent), $color));
+    }
+    @else if $lighten == darken {
+      @include background-image(linear-gradient(darken($color, $percent), $color));
+    }
+  }
+  @else if $direction == bottom {
+    @if $lighten == lighten {
+      @include background-image(linear-gradient($color, lighten($color, $percent)));
+    }
+    @else if $lighten == darken {
+      @include background-image(linear-gradient($color, darken($color, $percent)));
+    }
+  }
+}
+
+
+// Link Color
+@mixin linkColor($type:"color-link") {
+  @if $type == "color-link" {
+    color: $color-link;
+    &:visited, &:link {
+      color: $color-link;
+    }
+    &:hover, &:active {
+      color: lighten($color-link, 15%);
+    }
+  }
+  @else if $type == "color" {
+    color: $color;
+    &:visited, &:link {
+      color: $color;
+    }
+    &:hover, &:active {
+      color: $color-link;
+    }
+  }
+  @else if $type == "color-inverse" {
+    color: $color-inverse;
+    &:visited, &:link {
+      color: $color-inverse;
+    }
+    &:hover, &:active {
+      color: lighten($color-link, 10%);
+    }
+  }
+  @else if $type == "color-sub" {
+    color: $color-sub;
+    &:visited, &:link {
+      color: $color-sub;
+    }
+    &:hover, &:active {
+      color: $color-link;
+    }
+  }
+}
+
+
+// Inline Block;
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: top;
+  *display: inline;
+  *zoom: 1;
+}
+
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE
+  $ieopacity: $opacity*100;
+  filter: alpha(opacity= #{$ieopacity});
+  -ms-filter: "alpha(opacity=#{$ieopacity})";
+}
+
+
+// BEM
+/*
+// Element
+@mixin e($name) {
+  @at-root #{&}__#{$name} {
+    @content;
+  }
+}
+// Modifier
+@mixin m($name) {
+  @at-root #{&}--#{$name} {
+    @content;
+  }
+}
+*/
+
+
+// Calc
+@mixin calc($prop, $val) { 
+  #{$prop}: -moz-calc(#{$val}); 
+  #{$prop}: -o-calc(#{$val}); 
+  #{$prop}: -webkit-calc(#{$val}); 
+  #{$prop}: calc(#{$val}); 
+}
+
+
+// font size
+@mixin fontSize($size, $base:$fontSize) {
+  font-size: $size + px;
+  font-size: ($size / $base) + rem;
+}
+
+
+// line height
+@mixin lineHeight($size, $base:$fontSize) {
+  line-height: ($size / $base) * 100%;
+  line-height: ($size / $base) + rem;
+}
+
+
+// font family
+@mixin fontFamily($type:"default") {
+  @if $type == "default" {
+    font-family: $fontFamily;
+  }
+  @else if $type == "sansSerif" {
+    font-family: $fontFamily-sansSerif;
+  }
+  @else if $type == "serif" {
+    font-family: $fontFamily-serif;
+    font-style: italic;
+    letter-spacing: 0.05em;
+  }
+  @else if $type == "code" {
+    font-family: $fontFamily-code;
+  }
+  @else if $type == "icon" {
+    font-family: $fontFamily-icon;
+  }
+}
