@@ -15,13 +15,13 @@ module.exports = function(grunt){
       grunt.loadNpmTasks(taskName);
     }
   }
-  
+
 
   // 各タスクの設定
   grunt.initConfig({
     // package.jsonの定義
     pkg: pkg,
-  
+
     // connect ブラウザ自動更新
     connect: {
       livereload: {
@@ -34,14 +34,14 @@ module.exports = function(grunt){
         }
       }
     },
-    
+
     // open gruntコマンド実行時にページをブラウザで開く
     open: {
       server: {
         path: 'http://localhost:<%= connect.livereload.options.port %>'
       }
     },
-    
+
     // watch フォルダ監視
     watch: {
       // options
@@ -69,7 +69,7 @@ module.exports = function(grunt){
         tasks: []
       }
     },
-    
+
     // compass-multiple Compassのコンパイル(マルチスレッド使用)
     compassMultiple: {
       options: {
@@ -80,7 +80,7 @@ module.exports = function(grunt){
       },
       common: {}
     },
-    
+
     // htmlmin HTMLの圧縮
     htmlmin: {
       all: {
@@ -98,7 +98,7 @@ module.exports = function(grunt){
         dest: 'release_test/'
       }
     },
-    
+
     // combine-media-queries メディアクエリをまとめる
     cmq: {
       options: {
@@ -110,7 +110,7 @@ module.exports = function(grunt){
         }
       }
     },
-    
+
     // csscomb CSSプロパティを整理
     csscomb: {
       dev: {
@@ -120,7 +120,7 @@ module.exports = function(grunt){
         dest: 'develop/'
       }
     },
-    
+
     // cssmin CSSの圧縮
     cssmin: {
       all: {
@@ -130,7 +130,7 @@ module.exports = function(grunt){
         dest: 'release_test/'
       }
     },
-    
+
     // uglify JSの圧縮
     uglify: {
       build: {
@@ -138,7 +138,7 @@ module.exports = function(grunt){
         dest: 'release_test/js/<%= pkg.name %>.js'
       }
     },
-    
+
     // copy ファイルのコピー
     copy: {
       html: {
@@ -173,7 +173,7 @@ module.exports = function(grunt){
         filter: 'isFile'
       }
     },
-    
+
     // clean 不要ファイルを削除
     clean: {
       // 最初にreleaseディレクトリ内を削除
@@ -187,7 +187,7 @@ module.exports = function(grunt){
   // gruntコマンドで実行するタスクの設定
   // デフォルトタスク(作業時)
   grunt.registerTask('default', ['connect','open','watch'/*,'compassMultiple'*/]);
-  
+
   // 公開時に実行するタスク
-  grunt.registerTask('release', ['clean:deleteReleaseDir','cmq','csscomb','copy','htmlmin','cssmin','uglify']);
+  grunt.registerTask('release', ['clean:deleteReleaseDir','cmq','csscomb','copy'/*,'htmlmin'*/,'cssmin','uglify']);
 };

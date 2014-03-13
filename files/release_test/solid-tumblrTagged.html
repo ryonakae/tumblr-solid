@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml">
+<head>
+
+  <meta charset="UTF-8">
+  
+  <title>{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}</title>
+  
+  {block:Description}
+    <meta name="description" content="{MetaDescription}">
+  {/block:Description}
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+  
+  <!-- Tumblr Variables -->
+  <meta name="if:Show Description" content="1">
+  <meta name="if:Show Profile Image" content="0">
+  <meta name="if:Enable Share Buttons" content="1">
+  <meta name="if:Enable Google Analytics" content="0">
+
+  <meta name="text:Site Domain" content="">
+  <meta name="text:FBOGP User ID" content="">
+  <meta name="text:FBOGP Facebook Page URL" content="">
+  <meta name="text:TwMeta Creator ID" content="">
+  <meta name="text:Google Analytics ID" content="">
+
+  <link rel="stylesheet" href="//rawgithub.com/ryonakae/tumblr-solid/develop/develop/style.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,400italic">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="icon" href="{Favicon}">
+  
+  <!-- OGP -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:description" content="{MetaDescription}">
+  <meta property="og:site_name" content="{Title}">
+  {block:FBOGPUserID}
+    <meta property="fb:admins" content="{text:FBOGP User ID}">
+  {/block:FBOGPUserID}
+  {block:IndexPage}
+    <meta property="og:url" content="http://{text:Site Domain}">
+    <meta property="og:image" content="{PortraitURL-128}">
+  {/block:IndexPage}
+  {block:PermalinkPage}
+    {block:Posts}
+      <meta property="og:url" content="{Permalink}">
+      {block:Photo}
+        <meta property="og:image" content="{PhotoURL-500}">
+      {/block:Photo}
+      {block:Photoset}
+        {block:Photos}
+          <meta property="og:image" content="{PhotoURL-500}">
+        {/block:Photos} 
+      {/block:Photoset}
+    {/block:Posts}
+  {/block:PermalinkPage}
+  {block:IfFBOGPFacebookPageURL}
+    <meta property="article:publisher" content="{text:FBOGP Facebook Page URL}">
+  {/block:IfFBOGPFacebookPageURL}
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" value="summary_large_image">
+  <meta name="twitter:title" value="{block:PostSummary}{PostSummary} | {/block:PostSummary}{Title}">
+  <meta name="twitter:description" value="{MetaDescription}">
+  {block:IfTwMetaCreatorID}
+    <meta name="twitter:creator" value="@{text:TwMeta Creator ID}">
+  {/block:IfTwMetaCreatorID}
+  {block:IndexPage}
+    <meta name="twitter:image" value="{PortraitURL-128}">
+    <meta name="twitter:url" value="http://{text:Site Domain}">
+  {/block:IndexPage}
+  {block:PermalinkPage}
+    <meta name="twitter:image" value="{PhotoURL-500}">
+    <meta name="twitter:url" value="{Permalink}">
+  {/block:PermalinkPage}
+  
+  <!-- Custom CSS -->
+  <style>
+    {CustomCSS}
+  </style>
+  
+  {block:IfEnableGoogleAnalytics}
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{text:Google Analytics ID}', 'tumblr.com');
+      ga('send', 'pageview');
+    </script>
+  {/block:IfEnableGoogleAnalytics}
+
+  <!--[if IE]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+  
+  <div id="global-border-top"></div>
+  <div id="global-border-right"></div>
+  <div id="global-border-bottom"></div>
+  <div id="global-border-left"></div>
+  
+  <!-- navigation -->
+  <nav id="nav" role="navigation">
+    <div class="inner">
+      <ul id="navlist">
+        <li><a href="/">HOME</a></li>
+        {block:HasPages}
+          {block:Pages}
+            <li><a href="{URL}">{Label}</a></li>
+          {/block:Pages}
+        {/block:HasPages}
+        <li><a href="/archive">ARCHIVE</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="nav-toggle">
+    <i class="icon icon-menu open"></i>
+    <i class="icon icon-cancel close"></i>
+  </div>
+  
+  <!-- wrapper -->
+  <div id="wrapper">
+    <!-- inner -->
+    <div id="inner">
+    
+      <!-- header -->
+      <header id="header" role="banner">
+        <div class="title">
+          {block:IfShowProfileImage}
+            <div class="profileImg"><img src="{PortraitURL-128}" alt=""></div>
+          {/block:IfShowProfileImage}
+          <div class="text">
+            <h1><a href="/">{Title}</a></h1>
+            {block:IfShowDescription}
+              <p class="description">{Description}</p>
+            {/block:IfShowDescription}
+          </div>
+        </div>
+      </header>
+      
+      {block:IndexPage}
+        <!-- main: Index -->
+        <div id="main" class="index autopagerize_page_element" role="main">
+      {/block:IndexPage}
+      {block:PermalinkPage}
+        <!-- main: Single -->
+        <div id="main" class="single" role="main">
+      {/block:PermalinkPage}
+      
+        {block:Posts}
+          <!-- article -->
+          <div class="article {PostType}">
+            <article>
+            
+              <!-- article / header -->
+              <header class="article-header">
+                {block:Text}
+                  {block:Title}
+                    <h1><a href="{Permalink}">{Title}</a></h1>
+                  {/block:Title}
+                {/block:Text}
+                {block:Chat}
+                  {block:Title}
+                    <h1><a href="{Permalink}">{Title}</a></h1>
+                  {/block:Title}
+                {/block:Chat}
+                {block:Date}
+                  <p class="date">
+                    <a href="{Permalink}">
+                      <i class="icon icon-clock"></i>
+                      {block:NewDayDate}
+                        <time pubdate="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">
+                          {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} / {TimeAgo}
+                        </time>
+                      {/block:NewDayDate}
+                      {block:SameDayDate}
+                        <time pubdate="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">
+                          {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero} / {TimeAgo}
+                        </time>
+                      {/block:SameDayDate}
+                    </a>
+                  </p>
+                {/block:Date}
+                <div class="border"></div>
+              </header>
+              
+              <!-- article / content -->
+              <div class="article-content">
+                {block:Text}
+                  <!-- article / posttype: text -->
+                  {Body}
+                {block:Text}
+                
+                {block:Photo}
+                  <!-- article / posttype: photo -->
+                  {LinkOpenTag}
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+                  {LinkCloseTag}
+                  {block:Caption}
+                    <div class="caption">
+                      {Caption}
+                    </div>
+                  {/block:Caption}
+                {block:Photo}
+                
+                {block:Photoset}
+                  <!-- article / posttype: photoset -->
+                  {Photoset-700}
+                  {block:Caption}
+                    <div class="caption">
+                      {Caption}
+                    </div>
+                  {/block:Caption}
+                {/block:Photoset}
+                
+                {block:Quote}
+                  <!-- article / posttype: quote -->
+                  <blockquote class="{Length}">
+                    {Quote}
+                  </blockquote>
+                  {block:Source}
+                    <div class="source">
+                      {Source}
+                    </div>
+                  {/block:Source}                
+                {/block:Quote}
+                
+                {block:Link}
+                  <!-- article / posttype: link -->
+                  <h1><a href="{URL}" {Target}>{Name}</a></h1>
+                  {block:Description}
+                    {Description}
+                  {/block:Description}
+                {/block:Link}
+                
+                {block:Chat}
+                  <!-- article / posttype: chat -->
+                  <ul class="chatlist">
+                    {block:Lines}
+                      <li>
+                        {block:Label}
+                          <span class="name">{Label}</span>
+                        {/block:Label}
+                        <span class="text">{Line}</span>
+                      </li>
+                    {/block:Lines}
+                  </ul>
+                {/block:Chat}
+                
+                {block:Audio}
+                  <!-- article / posttype: audio -->
+                  {AudioPlayerBlack}
+                  {block:Caption}
+                    {Caption}
+                  {/block:Caption}
+                {/block:Audio}
+                
+                {block:Video}
+                  <!-- article / posttype: video -->
+                  {Video-700}
+                  {block:Caption}
+                    {Caption}
+                  {/block:Caption}
+                {/block:Video}
+                
+                {block:ContentSource}
+                  <!-- source -->
+                  <div class="source">
+                    <a href="{SourceURL}">
+                      {lang:Source}:
+                      {block:NoSourceLogo}
+                        {SourceTitle}
+                      {/block:NoSourceLogo}
+                    </a>
+                  </div>
+                {/block:ContentSource}
+              </div>
+              
+              <!-- article / footer -->
+              <footer class="article-footer" role="contentinfo">
+                {block:RebloggedFrom}
+                  <!-- Reblogged From -->
+                  <div class="reblogged_from">
+                    <i class="icon icon-bookmarks"></i>
+                    <span class="from">Reblogged from <a href="{ReblogParentURL}"><img src="{ReblogParentPortraitURL-16}">{ReblogParentName}</a></span>
+                    <span class="by">Posted by <a href="{ReblogRootURL}"><img src="{ReblogRootPortraitURL-16}">{ReblogRootName}</a></span>
+                  </div>
+                {/block:RebloggedFrom}
+                {block:PermalinkPage}
+                  <!-- like & reblog buttons -->
+                  <ul class="buttons">
+                    <li>{ReblogButton size="16"}</li>
+                    <li>{LikeButton size="16"}</li>
+                  </ul>
+                {/block:PermalinkPage}
+                {block:PermalinkPage}
+                  {block:IfEnableShareButtons}
+                    <!-- share buttons -->
+                    <div class="share">
+                      <div class="button share-fb">
+                        <iframe title="share_fb" src="http://www.facebook.com/plugins/like.php?href={Permalink}&amp;layout=button_count&amp;show_faces=false&amp;width=120&amp;action=like&amp;colorscheme=light" style="border:none; overflow:hidden; width:100px; height:20px;"></iframe>
+                      </div>
+                      <div class="button share-tw">
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="{text:TwMeta Creator ID}" data-lang="ja">ツイート</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                      </div>
+                    </div>
+                  {/block:IfEnableShareButtons}
+                {/block:PermalinkPage}
+                {block:NoteCount}
+                  <!-- Notes -->
+                  <div class="notes">
+                    <a href="{Permalink}#notes" name="notes">
+                      <i class="icon icon-comment"></i>
+                      {NoteCount} Notes
+                    </a>
+                  </div>
+                {/block:NoteCount}
+                {block:PermalinkPage}
+                  {block:PostNotes}
+                    <!-- notes detail -->
+                    <div class="notes-detail">
+                      <aside>
+                        {PostNotes}
+                      </aside>
+                    </div>
+                  {/block:PostNotes}
+                {/block:PermalinkPage}
+              </footer>
+            
+            </article>
+          </div>
+        {/block:Posts}
+        
+      </div>
+      
+      {block:Pagination}
+        <!-- Pagination: Index -->
+        <div id="pagination" role="navigation">
+          {block:PreviousPage}
+            <span class="link prev">
+              <a href="{PreviousPage}" class="prev" rel="prev"><i class="icon icon-left-open"></i>Prev</a>
+            </span>
+          {/block:PreviousPage}
+          <span class="link home"><a href="/">HOME</a></span>
+          {block:NextPage}
+            <span class="link next">
+              <a href="{NextPage}" class="next" rel="next">Next<i class="icon icon-right-open"></i></a>
+            </span>
+          {block:NextPage}
+        </div>
+      {/block:Pagination}
+      {block:PermalinkPagination}
+        <!-- Pagination: Single -->
+        <div id="pagination" role="navigation">
+          {block:PreviousPost}
+            <span class="link prev">
+              <a href="{PreviousPost}" class="prev" rel="prev"><i class="icon icon-left-open"></i>Prev</a>
+            </span>
+          {/block:PreviousPost}
+          <span class="link home"><a href="/">HOME</a></span>
+          {block:NextPost}
+            <span class="link next">
+              <a href="{NextPost}" class="next" rel="next">Next<i class="icon icon-right-open"></i></a>
+            </span>
+          {/block:NextPost}
+        </div>
+      {/block:PermalinkPagination}
+      
+      <!-- footer -->
+      <footer id="footer" role="complementary">
+        <!-- Backtop -->
+        <div id="backtop">
+          <i id="backtop-arrow" class="icon icon-up-open-big"></i>
+        </div>
+        <p class="text">
+          <span>© {CopyrightYears} {Title} all rights reserved.</span>
+          <span><a href="https://github.com/ryonakae/tumblr-solid" target="_blank">SOLID</a> theme designed by <a href="http://brdr.jp" target="_blank">RYO NAKAE</a></span>
+        </p>
+      </footer>
+    
+    </div><!-- /#inner -->
+  </div><!-- /#wrapper -->
+  
+  <!-- Java Script -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.9/jquery.transit.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.3/jquery.fitvids.min.js"></script>
+  <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
+  <script src="//rawgithub.com/ryonakae/tumblr-solid/develop/develop/js/solid.js"></script>
+
+</body>
+</html>
