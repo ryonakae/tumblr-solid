@@ -114,8 +114,8 @@
   // header
   #header {
     margin: 0;
-    padding: 3em 6%;
-    background-color: $bgColor-inverse;
+    padding: 3em 6% 0 6%;
+    // background-color: $bgColor-inverse;
 
     .title {
       .profileImg {
@@ -147,7 +147,7 @@
   // main
   #main {
     padding: 0 6%;
-    margin-top: 3em;
+    margin-top: 3.5em;
 
     .article {
       .article-content {

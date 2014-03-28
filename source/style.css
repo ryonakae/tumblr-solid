@@ -2731,8 +2731,7 @@ body.showborder #backtop {
 
   #header {
     margin: 0;
-    padding: 3em 6%;
-    background-color: white;
+    padding: 3em 6% 0 6%;
   }
   #header .title .profileImg {
     display: block;
@@ -2756,7 +2755,7 @@ body.showborder #backtop {
 
   #main {
     padding: 0 6%;
-    margin-top: 3em;
+    margin-top: 3.5em;
   }
   #main .article .article-content .amazlet-box .amazlet-image {
     display: block;
