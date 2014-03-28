@@ -2357,6 +2357,7 @@ body.showborder #wrapper {
   width: 100%;
   margin: 1.3em 0;
   padding: 1.5em;
+  background: #e8e8e8;
   border: none;
   font-family: "Source Code Pro", sans-serif;
   font-size: 85%;
