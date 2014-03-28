@@ -2342,12 +2342,23 @@ body.showborder #wrapper {
   background-color: rgba(0, 0, 0, 0.1);
   margin: 3em auto;
 }
+#main .article .article-content code {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  -moz-border-radius: 1.66667px;
+  -webkit-border-radius: 1.66667px;
+  border-radius: 1.66667px;
+  padding: 2px 4px;
+  margin: 0 3px;
+  font-family: "Source Code Pro", sans-serif;
+  font-size: 90%;
+}
 #main .article .article-content pre {
   width: 100%;
   margin: 1.3em 0;
   padding: 1.5em;
-  background: #e8e8e8;
-  border: none;
+  background: #fff;
+  border: 1px solid #ddd;
   font-family: "Source Code Pro", sans-serif;
   font-size: 85%;
   line-height: 1.52;
@@ -2359,20 +2370,11 @@ body.showborder #wrapper {
 }
 #main .article .article-content pre code {
   background: none;
+  border: none;
   font-size: 100%;
   padding: 0;
   margin: 0;
   font-family: inherit;
-}
-#main .article .article-content code {
-  background: #e8e8e8;
-  -moz-border-radius: 1.66667px;
-  -webkit-border-radius: 1.66667px;
-  border-radius: 1.66667px;
-  padding: 2px 4px;
-  margin: 0 3px;
-  font-family: "Source Code Pro", sans-serif;
-  font-size: 90%;
 }
 #main .article .article-content .source {
   margin: 1em 0 0 0;

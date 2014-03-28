@@ -415,12 +415,24 @@ body.showborder #wrapper {
         margin: 3em auto;
       }
 
+      code {
+        // background: darken($bgColor, 5%);
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        @include border-radius($round/3);
+        padding: 2px 4px;
+        margin: 0 3px;
+        @include fontFamily("code");
+        font-size: 90%;
+      }
+
       pre {
         width: 100%;
         margin: 1.3em 0;
         padding: 1.5em;
-        background: darken($bgColor, 5%);
-        border: none;
+        // background: darken($bgColor, 5%);
+        background: #fff;
+        border: 1px solid #ddd;
         @include fontFamily("code");
         font-size: 85%;
         line-height: $lineHeight * 0.8;
@@ -430,20 +442,12 @@ body.showborder #wrapper {
 
         code {
           background: none;
+          border: none;
           font-size: 100%;
           padding: 0;
           margin: 0;
           font-family: inherit;
         }
-      }
-
-      code {
-        background: darken($bgColor, 5%);
-        @include border-radius($round/3);
-        padding: 2px 4px;
-        margin: 0 3px;
-        @include fontFamily("code");
-        font-size: 90%;
       }
 
       .source {
