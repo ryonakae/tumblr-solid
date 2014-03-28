@@ -1,10 +1,10 @@
 # Define Directory
-http_path = "develop"
-sass_dir = "develop/_scss"
-css_dir = "develop"
-fonts_dir = "develop/font"
-images_dir = "develop/img"
-javascripts_dir = "develop/js"
+http_path = "source"
+sass_dir = "source/sass"
+css_dir = "source"
+fonts_dir = "source/font"
+images_dir = "source/img"
+javascripts_dir = "source/js"
 
 # Define Output Style
 # Option: expanded(default) / nested / compact / compressed

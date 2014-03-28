@@ -10,7 +10,7 @@ $width-scrollbar: 20px;
 
 // Webフォント
 @include font-face(
-	'ADAM', 
+	'ADAM',
 	font-files(
 		'adam/adam-webfont.woff',
 		'adam/adam-webfont.ttf',
@@ -22,7 +22,7 @@ $width-scrollbar: 20px;
 );
 
 @include font-face(
-	'TeXGyreAdventor', 
+	'TeXGyreAdventor',
 	font-files(
 		'tex-gyre-adventor/texgyreadventor-regular-webfont.woff',
 		'tex-gyre-adventor/texgyreadventor-regular-webfont.ttf',
@@ -34,7 +34,7 @@ $width-scrollbar: 20px;
 );
 
 @include font-face(
-	'TeXGyreAdventor', 
+	'TeXGyreAdventor',
 	font-files(
 		'tex-gyre-adventor/texgyreadventor-bold-webfont.woff',
 		'tex-gyre-adventor/texgyreadventor-bold-webfont.ttf',
@@ -47,7 +47,8 @@ $width-scrollbar: 20px;
 
 
 // Font
-$fontFamily: 'TeXGyreAdventor', 'Helvetica Neue', Helvetica, Arial, '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+$fontFamily: 'Helvetica Neue', Helvetica, Arial, '游ゴシック', YuGothic, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+$fontFamily-title: 'TeXGyreAdventor', 'Helvetica Neue', Helvetica, Arial, '游ゴシック', YuGothic, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 $fontFamily-sansSerif: 'ADAM', sans-serif;
 $fontFamily-serif: 'Lora', serif;
 $fontFamily-code: 'Source Code Pro', sans-serif;
@@ -73,11 +74,11 @@ $bgColor-inverse: #fff;
 $color: #1a1a1a;
 $color-sub: #999;
 $color-inverse: #fff;
-$color-link: #e52600;
+$color-link: #33A6B8;
 
 
 // Other
-$global-border-width: 20px;
+$global-border-width: 15px;
 $global-border-color: #fff;
 $round: 5px;
 

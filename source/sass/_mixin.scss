@@ -16,7 +16,7 @@
 	overflow: hidden;
 	text-indent: 100%;
 	white-space: nowrap;
-	
+
 	a {
 	  display: block;
 	  height: 100%;
@@ -29,7 +29,7 @@
 @mixin hoverEffect($speed:300ms, $opacity:0.7) {
 	@include transition-duration($speed);
 	@include transition-property(opacity);
-	
+
 	&:hover {
 		@include opacity($opacity);
 	}
@@ -39,7 +39,7 @@
 // Gradation
 @mixin gradient($direction:'top', $lighten:'lighten', $color:$color-link, $percent:10%) {
   background-color: $color;
-  
+
   @if $direction == top {
     @if $lighten == lighten {
       @include background-image(linear-gradient(lighten($color, $percent), $color));
@@ -119,29 +119,12 @@
 }
 
 
-// BEM
-/*
-// Element
-@mixin e($name) {
-  @at-root #{&}__#{$name} {
-    @content;
-  }
-}
-// Modifier
-@mixin m($name) {
-  @at-root #{&}--#{$name} {
-    @content;
-  }
-}
-*/
-
-
 // Calc
-@mixin calc($prop, $val) { 
-  #{$prop}: -moz-calc(#{$val}); 
-  #{$prop}: -o-calc(#{$val}); 
-  #{$prop}: -webkit-calc(#{$val}); 
-  #{$prop}: calc(#{$val}); 
+@mixin calc($prop, $val) {
+  #{$prop}: -moz-calc(#{$val});
+  #{$prop}: -o-calc(#{$val});
+  #{$prop}: -webkit-calc(#{$val});
+  #{$prop}: calc(#{$val});
 }
 
 
