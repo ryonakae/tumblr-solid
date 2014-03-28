@@ -384,20 +384,31 @@ table {
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "TeXGyreAdventor";
-  src: url('font/tex-gyre-adventor/texgyreadventor-regular-webfont.eot?1394085675');
-  src: url('font/tex-gyre-adventor/texgyreadventor-regular-webfont.eot?&1394085675#iefix') format('embedded-opentype'), url('font/tex-gyre-adventor/texgyreadventor-regular-webfont.woff?1394085675') format('woff'), url('font/tex-gyre-adventor/texgyreadventor-regular-webfont.ttf?1394085675') format('truetype'), url('font/tex-gyre-adventor/texgyreadventor-regular-webfont.svg?1394085675') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "TeXGyreAdventor";
-  src: url('font/tex-gyre-adventor/texgyreadventor-bold-webfont.eot?1394085675');
-  src: url('font/tex-gyre-adventor/texgyreadventor-bold-webfont.eot?&1394085675#iefix') format('embedded-opentype'), url('font/tex-gyre-adventor/texgyreadventor-bold-webfont.woff?1394085675') format('woff'), url('font/tex-gyre-adventor/texgyreadventor-bold-webfont.ttf?1394085675') format('truetype'), url('font/tex-gyre-adventor/texgyreadventor-bold-webfont.svg?1394085675') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
+/*
+@include font-face(
+	'TeXGyreAdventor',
+	font-files(
+		'tex-gyre-adventor/texgyreadventor-regular-webfont.woff',
+		'tex-gyre-adventor/texgyreadventor-regular-webfont.ttf',
+		'tex-gyre-adventor/texgyreadventor-regular-webfont.svg'
+	),
+  'tex-gyre-adventor/texgyreadventor-regular-webfont.eot',
+	normal,
+	normal
+);
+
+@include font-face(
+	'TeXGyreAdventor',
+	font-files(
+		'tex-gyre-adventor/texgyreadventor-bold-webfont.woff',
+		'tex-gyre-adventor/texgyreadventor-bold-webfont.ttf',
+		'tex-gyre-adventor/texgyreadventor-bold-webfont.svg'
+	),
+  'tex-gyre-adventor/texgyreadventor-bold-webfont.eot',
+	bold,
+	normal
+);
+*/
 @font-face {
   font-family: "fontello-entypo";
   src: url('font/fontello-entypo/fontello-entypo.eot?1394085675');
@@ -2024,7 +2035,7 @@ a, a img, #nav-toggle .icon, #backtop .icon {
 
 body {
   color: #1a1a1a;
-  font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
@@ -2050,30 +2061,28 @@ a:hover {
   opacity: 0.7;
 }
 
-.hovercolor a,
-.hovercolor i {
+.hovercolor a {
   color: #1a1a1a;
 }
-.hovercolor a:hover,
-.hovercolor i:hover {
+.hovercolor a:hover {
   color: #33a6b8;
 }
 
-.hovercolor-sub a,
-.hovercolor-sub i {
+.hovercolor-sub a {
   color: #999999;
 }
-.hovercolor-sub a:hover,
-.hovercolor-sub i:hover {
+.hovercolor-sub a:hover {
   color: #33a6b8;
 }
 
-.hovercolor-inverse a,
-.hovercolor-inverse i {
+.hovercolor-inverse a {
   color: white;
 }
-.hovercolor-inverse a:hover,
-.hovercolor-inverse i:hover {
+.hovercolor-inverse a:hover {
+  color: #33a6b8;
+}
+
+.hovercolor-icon i:hover {
   color: #33a6b8;
 }
 
@@ -2216,7 +2225,8 @@ body.showborder #wrapper {
 }
 
 #header {
-  margin: 5em 0;
+  padding-top: 5em;
+  margin: 0 0 5em 0;
 }
 #header .title .profileImg {
   display: inline-block;
@@ -2341,16 +2351,17 @@ body.showborder #wrapper {
 #main .article .article-content pre {
   width: 100%;
   margin: 1.3em 0;
-  padding: 2em;
+  padding: 1.5em;
   background: #e8e8e8;
+  border: none;
   font-family: "Source Code Pro", sans-serif;
   font-size: 85%;
   line-height: 1.52;
   white-space: pre;
   overflow: auto;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 #main .article .article-content pre code {
   background: none;
@@ -2417,6 +2428,9 @@ body.showborder #wrapper {
 #main .article .article-content .amazlet-box {
   margin: 1.5em 0;
   width: 100%;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   background-color: white;
   padding: 1em;
 }
@@ -2660,7 +2674,7 @@ body.showborder #wrapper {
 
 #footer {
   margin-top: 7em;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
   font-size: 80%;
   color: #999999;
   font-family: "Lora", serif;

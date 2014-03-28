@@ -21,6 +21,7 @@ $width-scrollbar: 20px;
 	normal
 );
 
+/*
 @include font-face(
 	'TeXGyreAdventor',
 	font-files(
@@ -44,11 +45,11 @@ $width-scrollbar: 20px;
 	bold,
 	normal
 );
+*/
 
 
 // Font
-$fontFamily: 'Helvetica Neue', Helvetica, Arial, '游ゴシック', YuGothic, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-$fontFamily-title: 'TeXGyreAdventor', 'Helvetica Neue', Helvetica, Arial, '游ゴシック', YuGothic, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+$fontFamily: Lato, 'Helvetica Neue', Helvetica, Arial, '游ゴシック', YuGothic, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 $fontFamily-sansSerif: 'ADAM', sans-serif;
 $fontFamily-serif: 'Lora', serif;
 $fontFamily-code: 'Source Code Pro', sans-serif;

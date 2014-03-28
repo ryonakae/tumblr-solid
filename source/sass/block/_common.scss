@@ -62,25 +62,28 @@ a {
   }
 }
 
-.hovercolor a,
-.hovercolor i {
+.hovercolor a {
   color: $color;
   &:hover {
     color: $color-link;
   }
 }
 
-.hovercolor-sub a,
-.hovercolor-sub i {
+.hovercolor-sub a {
   color: $color-sub;
   &:hover {
     color: $color-link;
   }
 }
 
-.hovercolor-inverse a,
-.hovercolor-inverse i {
+.hovercolor-inverse a {
   color: $color-inverse;
+  &:hover {
+    color: $color-link;
+  }
+}
+
+.hovercolor-icon i {
   &:hover {
     color: $color-link;
   }
@@ -250,7 +253,9 @@ body.showborder #wrapper {
 // header
 // ----------------------------------------
 #header {
-  margin: 5em 0;
+  // margin: 5em 0;
+  padding-top: 5em;
+  margin: 0 0 5em 0;
 
   // a {
   //   @include linkColor("color");
@@ -413,14 +418,15 @@ body.showborder #wrapper {
       pre {
         width: 100%;
         margin: 1.3em 0;
-        padding: 2em;
+        padding: 1.5em;
         background: darken($bgColor, 5%);
+        border: none;
         @include fontFamily("code");
         font-size: 85%;
         line-height: $lineHeight * 0.8;
         white-space: pre;
         overflow: auto;
-        @include border-radius(0);
+        @include border-radius($round);
 
         code {
           background: none;
@@ -500,7 +506,7 @@ body.showborder #wrapper {
         margin: 1.5em 0;
         // border: 3px solid #F2F2F2;
         width: 100%;
-        // @include border-radius($round);
+        @include border-radius($round);
         background-color: $bgColor-inverse;
         padding: 1em;
 
@@ -818,7 +824,7 @@ body.showborder #wrapper {
 // ----------------------------------------
 #footer {
   margin-top: 7em;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
   font-size: $fontSize-sub;
   color: $color-sub;
   @include fontFamily("serif");
