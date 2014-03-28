@@ -416,9 +416,10 @@ body.showborder #wrapper {
       }
 
       code {
-        // background: darken($bgColor, 5%);
-        background-color: #f0f0f0;
-        border: 1px solid #ddd;
+        background: darken($bgColor, 5%);
+        // background-color: #f0f0f0;
+        // border: 1px solid #ddd;
+        border: none;
         @include border-radius($round/3);
         padding: 2px 4px;
         margin: 0 3px;
@@ -430,9 +431,10 @@ body.showborder #wrapper {
         width: 100%;
         margin: 1.3em 0;
         padding: 1.5em;
-        // background: darken($bgColor, 5%);
-        background: #fff;
-        border: 1px solid #ddd;
+        background: darken($bgColor, 5%);
+        // background: #fff;
+        // border: 1px solid #ddd;
+        border: none;
         @include fontFamily("code");
         font-size: 85%;
         line-height: $lineHeight * 0.8;

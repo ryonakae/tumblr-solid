@@ -2343,8 +2343,8 @@ body.showborder #wrapper {
   margin: 3em auto;
 }
 #main .article .article-content code {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background: #e8e8e8;
+  border: none;
   -moz-border-radius: 1.66667px;
   -webkit-border-radius: 1.66667px;
   border-radius: 1.66667px;
@@ -2357,8 +2357,7 @@ body.showborder #wrapper {
   width: 100%;
   margin: 1.3em 0;
   padding: 1.5em;
-  background: #fff;
-  border: 1px solid #ddd;
+  border: none;
   font-family: "Source Code Pro", sans-serif;
   font-size: 85%;
   line-height: 1.52;
