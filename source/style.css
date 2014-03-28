@@ -2035,7 +2035,7 @@ a, a img, #nav-toggle .icon, #backtop .icon {
 
 body {
   color: #1a1a1a;
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.9;
@@ -2291,12 +2291,6 @@ body.showborder #wrapper {
   font-style: italic;
   letter-spacing: 0.05em;
   margin: 0;
-}
-#main .article .article-header .border {
-  width: 20px;
-  height: 2px;
-  background-color: #1a1a1a;
-  margin-top: 2.5em;
 }
 #main .article .article-content {
   margin-top: 2em;
